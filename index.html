@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Fruit | Responsive website Landing Page</title>
+	<link rel="stylesheet" type="text/css" href="fruit.css">
+</head>
+<body>
+  <section>
+  	<div class="bg"></div>
+  	<header>
+  		<a href="#" class="logo">Fruit</a>
+  		<ul class="navigation">
+  			<li><a href="#" class="active">Home</a></li>
+  			<li><a href="#">Menu</a></li>
+  			<li><a href="#">What's New</a></li>
+  			<li><a href="#">Contact</a></li>
+  		</ul>
+  	</header>
+  	<div class="content">
+  		<div class="textBox">
+  			<h2>Eat Fresh Every Day</h2>
+  			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque quis ipsum suscipit, pellentesque massa nec, sodales lectus. Aenean eleifend, augue in lobortis ultrices, magna arcu luctus libero, ut mattis justo metus non odio. Fusce in dolor elementum, laoreet nibh vitae, molestie tortor. Pellentesque et ultricies mauris.</p>
+  			<a href="#">Learn More</a>
+  		</div>
+  		<div class="imgBox">
+  			<img src="apple.png">
+  		</div>
+  	</div>
+  	<ul class="thumb">
+  		<li data-text="Apple" class="active"><img src="apple.png"></li>
+  		<li data-text="Mango"><img src="mango.png"></li>
+  		<li data-text="Watermelon"><img src="watermelon.png"></li>
+  		<li data-text="Dragon Fruits"><img src="dragonFruits.png"></li>
+  		<li data-text="Pineapple"><img src="pineApple.png"></li>
+  	</ul>
+  </section>
+
+  <script>
+  	Let el = document.querySelectorAll('.thumb li');
+  	for (Let i = 0; i < el.length; i++){
+  		el[i].onclick = function(){
+  			var c = 0;
+  			while(c < el.length){
+  				el[c++].className = 'check';
+  			}
+  			el[i].className = 'check active';
+  		}
+  	}
+  </script>
+</body>
+</html>
