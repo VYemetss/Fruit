@@ -11,6 +11,7 @@
   	<div class="bg"></div>
   	<header>
   		<a href="#" class="logo">Fruit</a>
+  		<div class="toggle"></div>
   		<ul class="navigation">
   			<li><a href="#" class="active">Home</a></li>
   			<li><a href="#">Menu</a></li>
@@ -25,21 +26,45 @@
   			<a href="#">Learn More</a>
   		</div>
   		<div class="imgBox">
-  			<img src="apple.png">
+  			<img src="apple.png" class="fruits">
   		</div>
   	</div>
   	<ul class="thumb">
-  		<li data-text="Apple" class="active"><img src="apple.png"></li>
-  		<li data-text="Mango"><img src="mango.png"></li>
-  		<li data-text="Watermelon"><img src="watermelon.png"></li>
-  		<li data-text="Dragon Fruits"><img src="dragonFruits.png"></li>
-  		<li data-text="Pineapple"><img src="pineApple.png"></li>
+  		<li data-text="Apple" class="active"><img src="apple.png" onclick="imgSlider('apple.png');changeBgColor('#fc4a55')"></li>
+  		<li data-text="Mango"><img src="mango.png" onclick="imgSlider('mango.png');changeBgColor('#ffcc02')"></li>
+  		<li data-text="Watermelon"><img src="watermelon.png" onclick="imgSlider('watermelon.png');changeBgColor('#92ba3c')"></li>
+  		<li data-text="Dragon Fruits"><img src="dragonFruits.png" onclick="imgSlider('dragonFruits.png');changeBgColor('#fb6cb2')"></li>
+  		<li data-text="Pineapple"><img src="pineApple.png" onclick="imgSlider('pineApple.png');changeBgColor('#ffb42b')"></li>
+  	</ul>
+  	<ul class="sci">
+  		<li><a href="#"><img src="facebook.png"></a></li>
+  		<li><a href="#"><img src="twitter.png"></a></li>
+  		<li><a href="#"><img src="instagram.png"></a></li>
   	</ul>
   </section>
 
   <script>
-  	Let el = document.querySelectorAll('.thumb li');
-  	for (Let i = 0; i < el.length; i++){
+  	let menuToggle = document.querySelector('.toggle');
+  	let navigation = document.querySelector('.navigation');
+  	menuToggle.onclick = function(){
+  		menuToggle.classList.toggle('active');
+  		navigation.classList.toggle('active');
+  	}
+
+  	//change image on click
+    function imgSlider(anything){
+    	document.querySelector('.fruits').src = anything;
+    }
+
+    //change background color
+    function changeBgColor(color){
+    	const bg = document.querySelector('.bg');
+    	bg.style.background = color;
+    }
+
+  	//add active class 
+  	let el = document.querySelectorAll('.thumb li');
+  	for (let i = 0; i < el.length; i++){
   		el[i].onclick = function(){
   			var c = 0;
   			while(c < el.length){
